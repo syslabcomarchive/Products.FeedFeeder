@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="feedfeeder">
+
+  <body>
+    <div metal:fill-slot="content-core"
+         tal:define="text context/getText;
+                     is_editable context/@@plone_context_state/is_editable;">
+
+      <p tal:condition="python: not text and is_editable"
+         i18n:translate="no_body_text"
+         class="discreet">
+        This item does not have any body text, click the edit tab to change it.
+      </p>
+
+      <div class="plain"
+           tal:condition="text">
+        <div tal:replace="structure text" />
+      </div>
+
+      <tal:enclosures condition="python:context.getFolderContents()">
+        <h3>Enclosures</h3>
+
+        <ul>
+          <li tal:repeat="child python:context.getFolderContents()">
+            <a tal:attributes="href child/getURL"
+               tal:content="child/Title"
+               href="">Enclosure</a>
+          </li>
+        </ul>
+      </tal:enclosures>
+
+      <div class="feed-source-link">
+        <a href="#"
+           tal:attributes="href context/remote_url"
+           i18n:translate="source_available_here">Source available here.</a>
+      </div>
+    </div>
+  </body>
+</html>

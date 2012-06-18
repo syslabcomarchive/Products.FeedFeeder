@@ -1,0 +1,90 @@
+# Reinout van Rees <reinout@vanrees.org>, 2006.
+# Maurits van Rees <m.van.rees@zestsoftware.nl>, 2006-2010
+msgid ""
+msgstr ""
+"Project-Id-Version: feedfeeder\n"
+"POT-Creation-Date: 2011-12-27 22:06+0000\n"
+"PO-Revision-Date: 2010-11-26 19:32+0100\n"
+"Last-Translator: Maurits van Rees <m.van.rees@zestsoftware.nl>\n"
+"Language-Team: Zest Software <info@zestsoftware.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: nl\n"
+"Language-Name: Dutch\n"
+"Preferred-Encodings: latin1 utf-8\n"
+"Domain: feedfeeder\n"
+
+#: ./browser/feed.py:47
+msgid "Feed items updated"
+msgstr "Feed items geüpdatet"
+
+#. Default: "last modified"
+#: ./browser/feed-item3.pt:39
+msgid "box_last_modified"
+msgstr "laatst gewijzigd"
+
+#. Default: "Feeditemauthor"
+#: content/FeedFeederItem.py
+msgid "feedfeeder_label_feedItemAuthor"
+msgstr "Auteur"
+
+#. Default: "Feeditemupdated"
+#: content/FeedFeederItem.py
+msgid "feedfeeder_label_feedItemUpdated"
+msgstr "Laatste wijziging"
+
+#. "Feed Title"
+#: content/folder.py
+msgid "feedfeeder_label_feedTitle"
+msgstr "Titel van feed"
+
+#. Default: "Feeds"
+#: content/FeedfeederFolder.py
+msgid "feedfeeder_label_feeds"
+msgstr "URLs van de feeds"
+
+#. Default: "Links"
+#: content/FeedFeederItem.py
+msgid "feedfeeder_label_link"
+msgstr "URL (van het oorspronkelijke item)"
+
+#. "When updating this feed's item the transition selected below will be performed."
+#: content/folder.py
+msgid "help_default_transition"
+msgstr "Tijdens het updaten van een item uit deze feed wordt de transitie uitgevoerd die beneded geselecteerd is."
+
+#. 'Default transition'
+#: content/folder.py
+msgid "label_default_transition"
+msgstr "Standaardtransitie"
+
+#. Default: "This item does not have any body text, click the edit tab to change it."
+#: ./browser/feed-item.pt:13
+#: ./browser/feed-item3.pt:87
+msgid "no_body_text"
+msgstr "Dit item heeft geen bodytekst; klik op de edit-tab om het te wijzigen."
+
+#. Default: "Source available here."
+#: ./browser/feed-item.pt:37
+#: ./browser/feed-item3.pt:111
+msgid "source_available_here"
+msgstr "Bron hier beschikbaar."
+
+#. Default: "Test view showing the latest items from the feeds"
+#: ./skins/feedfeeder/latest_items.pt:7
+#: skins/feedfeeder/latest_items.pt:7
+msgid "test_view_title"
+msgstr "Test overzicht: de laatste items uit de feeds"
+
+#. Default: "Contributors: ${name}"
+#: ./browser/feed-item3.pt:63
+msgid "text_contributors"
+msgstr "Auteurs: ${name}"
+
+#. Default: "— expired"
+#: ./browser/feed-item3.pt:46
+msgid "time_expired"
+msgstr "- verlopen"
+
