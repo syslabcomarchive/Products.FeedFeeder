@@ -66,6 +66,6 @@ def importVarious(context):
         return
     logger = context.getLogger('feedfeeder')
     site = context.getSite()
-    add_indexes(site, logger)
-    createFeedUpdatedCriterion(site, logger)
+    # add_indexes(site, logger)
+    # createFeedUpdatedCriterion(site, logger)
     logger.info('feedfeeder_various step imported')

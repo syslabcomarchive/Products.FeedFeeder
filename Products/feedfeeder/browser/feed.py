@@ -68,7 +68,7 @@ class FeedFolderView(object):
         """
 
         listing = self.context.getFolderContents
-        results = listing({'sort_on': 'getFeedItemUpdated',
+        results = listing({'sort_on': 'created',
                            'sort_order': 'descending',
                            'portal_type': 'FeedFeederItem'})
         if not results and self.context.portal_type == 'Topic':
@@ -76,15 +76,16 @@ class FeedFolderView(object):
             results = self.context.queryCatalog(
                 portal_type='FeedFeederItem')
         for index, x in enumerate(results):
+            obj = x.getObject()
             content_url = x.getURL()
-            item = dict(updated_date=x.getFeedItemUpdated,
+            item = dict(updated_date=obj.getFeedItemUpdated(),
                         url=content_url,
                         content_url=content_url,
                         title=x.Title,
                         summary=x.Description,
-                        author=x.getFeedItemAuthor,
-                        has_text=x.getHasBody,
-                        target_link=x.getLink,
+                        author=obj.getFeedItemAuthor(),
+                        has_text=obj.getHasBody(),
+                        target_link=obj.getLink(),
                         )
             self.extraDecoration(item, x)
             enclosures = x.getObjectids
@@ -93,7 +94,7 @@ class FeedFolderView(object):
                 len(enclosures) == 1):
                 # only one enclosure? return item title but return link
                 # to sole enclosure, unless there is some body text.
-                if not int(x.getHasBody):
+                if not int(obj.getHasBody()):
                     item['url'] = item['url'] + '/' + enclosures[0]
             yield item
 
