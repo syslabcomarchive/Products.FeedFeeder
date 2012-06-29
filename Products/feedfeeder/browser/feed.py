@@ -88,7 +88,7 @@ class FeedFolderView(object):
                         target_link=obj.getLink(),
                         )
             self.extraDecoration(item, x)
-            enclosures = x.getObjectids
+            enclosures = obj.getObjectids()
 
             if (enclosures and enclosures is not None and
                 len(enclosures) == 1):
